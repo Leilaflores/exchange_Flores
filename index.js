@@ -18,7 +18,7 @@ let contador = 0;
  
 while (true) {
   let destino = prompt(
-    'Seleccione la moneda de destino: "Chile, Peru o Venezuela"'
+    'Seleccione el destino: "Chile, Peru o Venezuela"'
   ).toLowerCase();
 
   let montoOrigen = parseFloat(
