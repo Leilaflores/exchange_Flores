@@ -15,8 +15,49 @@ const tasa = new Cotizacion();
 let ordenes = [];
 
 let contador = 0;
- 
-while (true) {
+
+let tasaActual;
+
+let total;
+
+let selector = document.getElementById("inputGroupSelect01");
+
+selector.addEventListener("change", (e) => {
+  console.log(selector.value);
+
+  let valor = document.getElementById("tasa");
+
+  tasaActual = tasa[selector.value];
+
+  total = tasa.sumaTasa(tasaActual,monto.value)
+ beneficiario.innerText = total
+
+  valor.innerText = tasaActual;
+});
+
+let monto = document.getElementById("ars");
+
+let beneficiario = document.getElementById("totales");
+
+monto.addEventListener("change", ()=>{
+total = tasa.sumaTasa(tasaActual,monto.value)
+ beneficiario.innerText = total
+} );
+
+let confirmar = document.getElementById("confirmar")
+
+confirmar.addEventListener("click", ()=>{
+  contador++;
+  console.log(contador);
+  const listado = document.getElementById('formulario');
+  const h6 = document.createElement('h6');
+  h6.textContent = ('su numero de orden es: ' + contador);
+  listado.appendChild(h6);
+  h6.classList.add('fs-6','p-3');
+})
+
+
+/* while (true) {
   let destino = prompt(
     'Seleccione el destino: "Chile, Peru o Venezuela"'
   ).toLowerCase();
@@ -56,12 +97,8 @@ while (true) {
   if (window.confirm("Desea finalizar?")) {
     break;
   }
-}
-console.log (ordenes)
-
-/* const NumeroDeOrden = ordenes.map(operacion => operacion.NumeroDeOrden)
-  console.log(NumeroDeOrden);
- */
+} */
+/* console.log (ordenes)
 
 const total = ordenes.reduce((acc, orden) => acc + orden.monto, 0);
 
@@ -73,4 +110,4 @@ let numeroDeOrden = parseInt(prompt("Ingrese su numero de Orden para ver el deta
 
 let infoOrden = ordenes.find((orden) => orden.NumeroDeOrden == numeroDeOrden);
 
-alert("Numero de Orden: " + infoOrden.NumeroDeOrden + "\n" + "Monto de Origen: " + infoOrden.monto + "\n" + "Moneda de Destino: " + infoOrden.moneda + "\n" + "Pais de Destino: " + infoOrden.montoFinal);
+alert("Numero de Orden: " + infoOrden.NumeroDeOrden + "\n" + "Monto de Origen: " + infoOrden.monto + "\n" + "Moneda de Destino: " + infoOrden.moneda + "\n" + "Pais de Destino: " + infoOrden.montoFinal); */

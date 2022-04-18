@@ -22,28 +22,30 @@
         </nav>
       </div>
       
-      <div class="contenedor container-sm">
+      <div id="formulario" class="contenedor container-sm">
+        <form action="" name="formulario" method="get">
+
         <div class="input-group mb-3">
           <label class="input-group-text" for="inputGroupSelect01">Destino</label>
           <select class="form-select" id="inputGroupSelect01">
             <option selected>Selecione...</option>
-            <option value="1">Chile</option>
-            <option value="2">Perú</option>
-            <option value="3">Venezuela</option>
+            <option value="chile">Chile</option>
+            <option value="peru">Perú</option>
+            <option value="venezuela">Venezuela</option>
           </select>
         </div>
       
       <div class="input-group mb-3">
         <span class="input-group-text">ARS $</span>
-        <input type="number" class="form-control" min="0" value="0" step=".01" aria-label="Dollar amount (with dot and two decimal places)">
+        <input id="ars" type="number" class="form-control" min="0" value="0" step=".01" aria-label="Dollar amount (with dot and two decimal places)">
       </div>
       <div>
         <div class="alert alert-dark d-flex justify-content-between p-0" role="alert">
          <div>
-           <h1 class="fs-6 m-3 fw-normal">comision</h1>
+           <h1 class="fs-6 m-3 fw-normal">Tasa</h1>
         </div>
         <div>
-          <h1 class="fs-6 m-3 fw-normal">comision</h1>
+          <h1 id="tasa" class="fs-6 m-3 fw-normal">0</h1>
        </div>
         </div>
       </div>
@@ -54,16 +56,16 @@
           </h1>
         </div>
         <div>
-          <h1 class="fs-6 m-3 fw-normal">
-             El beneficiario recibe...
+          <h1 id="totales" class="fs-6 m-3 fw-normal">
+             0
           </h1>
         </div>
       </div>
       <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-primary" type="button">Continuar</button>
-        <button class="btn btn-primary" type="button">Borrar</button>
+        <button id="confirmar" class="btn btn-primary" type="button" value="Submit" >Confirmar</button>
       </div>
-      </div>
+    </form>
+  </div>
 
       </div>
     <script src="index.js"></script>
