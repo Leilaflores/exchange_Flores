@@ -1,0 +1,24 @@
+.fondo{
+    background-color: #fff;
+}
+
+.bg-nav{
+    background-color: #01415B !important;
+}
+.bg-destino {
+    background-color: #A6BC09;
+}
+.bg-ars{
+    background-color: #A6BC09;
+} 
+#confirmar{
+    background-color: #019587;
+}
+
+.bg-footer{
+    background-color:#01415B ;
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,10 @@
+.ojo{
+    background-color:#019587 ;
+    transition-duration: 0.4s;
+    color: white;
+}
+.boton :hover{
+    background-color: #01415B !important;
+    transition-duration: 0.3s;
+    color: white;
+}
