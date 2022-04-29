@@ -1,7 +1,12 @@
+function guardarUsuario(usuario) {
+  let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+  usuarios.push(usuario);
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
 
-/* if() */
-
-console.log(localStorage.getItem("usuarios"));
+if (!localStorage.getItem("usuarios")) {
+  localStorage.setItem("usuarios", JSON.stringify([]));
+}
 
 let ojo = document.getElementById("show_password");
 
@@ -14,26 +19,23 @@ let confirmar = document.getElementById("confirmar");
 confirmar.addEventListener("click", enviar);
 
 function enviar() {
-    let nombre = document.getElementById("name").value;
-    let correo = document.getElementById("email").value;
-    let id = document.getElementById("tipoId").value;
-    let numId = document.getElementById("Id").value;
-    let clave = document.getElementById("txtPassword").value;
-    
-    const usuario = {
-        nombre: nombre,
-        correo: correo,
-        tipoId: id,
-        id: numId,
-        password: clave,
-    }
-    
-    localStorage.setItem("usuario", JSON.stringify(usuario));
-    
-    const usuarioLocal = JSON.parse(localStorage.getItem("usuario"));
-    
-    console.log(usuarioLocal);
-    console.log(usuarioLocal.nombre);
+  let nombre = document.getElementById("name").value;
+  let correo = document.getElementById("email").value;
+  let id = document.getElementById("tipoId").value;
+  let numId = document.getElementById("Id").value;
+  let clave = document.getElementById("txtPassword").value;
+
+  const usuario = {
+    nombre: nombre,
+    correo: correo,
+    tipoId: id,
+    id: numId,
+    password: clave,
+  };
+
+  guardarUsuario(usuario);
+
+  window.location.href = "./iniciarsesion.html";
 }
 
 function showPassword() {
