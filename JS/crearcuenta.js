@@ -4,13 +4,9 @@ function guardarUsuario(usuario) {
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
-if (!localStorage.getItem("usuarios")) {
-  localStorage.setItem("usuarios", JSON.stringify([]));
-}
+!localStorage.getItem("usuarios") && localStorage.setItem("usuarios", JSON.stringify([]));
 
 let ojo = document.getElementById("show_password");
-
-console.log(this.querySelector);
 
 ojo.addEventListener("click", showPassword);
 
@@ -35,7 +31,12 @@ function enviar() {
 
   guardarUsuario(usuario);
 
-  window.location.href = "./iniciarsesion.html";
+  swal({
+    title: "Good job!",
+    text: "Su usario se ha creado con exito!",
+    icon: "success",
+    button: "Continuar!",
+  });  
 }
 
 function showPassword() {

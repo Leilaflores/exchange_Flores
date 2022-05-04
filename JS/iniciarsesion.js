@@ -13,8 +13,9 @@ function enviar() {
   let resultado = usuarios.filter(
     (usuario) => usuario.correo == email && usuario.password == password
   );
+
   if (resultado.length == 0) {
-    alert("No existe el usuario");
+    swal("No existe el usuario");
   } else {
     localStorage.setItem("ingresoUsuario", JSON.stringify(resultado[0]));
     window.location.href = "/index.html";
@@ -29,7 +30,9 @@ ojo.addEventListener("click", (mostrarPassword) => {
     cambio.type = "text";
     icon.classList.remove("fa-eye-slash");
     icon.classList.add("fa-eye");
-  } else {
+  } 
+  
+  else {
     cambio.type = "password";
     icon.classList.remove("fa-eye");
     icon.classList.add("fa-eye-slash");

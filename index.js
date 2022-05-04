@@ -47,6 +47,12 @@ total = tasa.sumaTasa(tasaActual,monto.value)
 let confirmar = document.getElementById("confirmar")
 
 confirmar.addEventListener("click", ()=>{
+  swal({
+    title: "Excelente!",
+    text: "Su orden se creo con exito!",
+    icon: "success",
+    button: "Continuar",
+  });
   contador++;
   console.log(contador);
   const listado = document.getElementById('formulario');
@@ -54,4 +60,4 @@ confirmar.addEventListener("click", ()=>{
   h6.textContent = ('su numero de orden es: ' + contador);
   listado.appendChild(h6);
   h6.classList.add('fs-6','p-3');
-})
+}) 
