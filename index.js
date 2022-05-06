@@ -51,7 +51,14 @@ confirmar.addEventListener("click", ()=>{
     title: "Excelente!",
     text: "Su orden se creo con exito!",
     icon: "success",
-    button: "Continuar",
+    buttons: {confirm: {
+      text: "Continuar",
+      value: true,
+      visible: true,
+      className: "confirmar",
+      closeModal: true}
+    }
+
   });
   contador++;
   console.log(contador);

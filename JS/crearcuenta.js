@@ -35,8 +35,13 @@ function enviar() {
     title: "Good job!",
     text: "Su usario se ha creado con exito!",
     icon: "success",
-    button: "Continuar!",
-  });  
+    buttons: {confirm: {
+      text: "Continuar",
+      value: true,
+      visible: true,
+      className: "confirmar",
+      closeModal: true}
+  }});  
 }
 
 function showPassword() {
