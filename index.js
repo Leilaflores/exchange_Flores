@@ -3,6 +3,23 @@ class Cotizacion {
     this.chile = 3.72;
     this.peru = 0.017;
     this.venezuela = 0.0222;
+
+    const options = {
+      method: "GET",
+      headers: { apikey: "xTliFhWzfpqcPVPe2Se97HNJNyRuWsKw" },
+    };
+
+    fetch(
+      "https://api.apilayer.com/exchangerates_data/fluctuation?base=ARS&symbols=ARS,CLP,VEF,PEN",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        this.chile = response.rates.CLP.end_rate;
+        this.peru = response.rates.PEN.end_rate;
+        this.venezuela = response.rates.VEF.end_rate;
+      })
+      .catch((err) => console.error(err));
   }
 
   sumaTasa(tasa, monto) {
@@ -29,8 +46,8 @@ selector.addEventListener("change", (e) => {
 
   tasaActual = tasa[selector.value];
 
-  total = tasa.sumaTasa(tasaActual,monto.value)
- beneficiario.innerText = total
+  total = tasa.sumaTasa(tasaActual, monto.value);
+  beneficiario.innerText = total;
 
   valor.innerText = tasaActual;
 });
@@ -39,32 +56,33 @@ let monto = document.getElementById("ars");
 
 let beneficiario = document.getElementById("totales");
 
-monto.addEventListener("change", ()=>{
-total = tasa.sumaTasa(tasaActual,monto.value)
- beneficiario.innerText = total
-} );
+monto.addEventListener("change", () => {
+  total = tasa.sumaTasa(tasaActual, monto.value);
+  beneficiario.innerText = total;
+});
 
-let confirmar = document.getElementById("confirmar")
+let confirmar = document.getElementById("confirmar");
 
-confirmar.addEventListener("click", ()=>{
+confirmar.addEventListener("click", () => {
   swal({
     title: "Excelente!",
     text: "Su orden se creo con exito!",
     icon: "success",
-    buttons: {confirm: {
-      text: "Continuar",
-      value: true,
-      visible: true,
-      className: "confirmar",
-      closeModal: true}
-    }
-
+    buttons: {
+      confirm: {
+        text: "Continuar",
+        value: true,
+        visible: true,
+        className: "confirmar",
+        closeModal: true,
+      },
+    },
   });
   contador++;
   console.log(contador);
-  const listado = document.getElementById('formulario');
-  const h6 = document.createElement('h6');
-  h6.textContent = ('su numero de orden es: ' + contador);
+  const listado = document.getElementById("formulario");
+  const h6 = document.createElement("h6");
+  h6.textContent = "su numero de orden es: " + contador;
   listado.appendChild(h6);
-  h6.classList.add('fs-6','p-3');
-}) 
+  h6.classList.add("fs-6", "p-3");
+});
