@@ -80,8 +80,9 @@ confirmar.addEventListener("click", () => {
   });
   contador++;
   console.log(contador);
-  const listado = document.getElementById("formulario");
+  const listado = document.getElementById("form");
   const h6 = document.createElement("h6");
+  h6.className ="contador my-3";
   h6.textContent = "su numero de orden es: " + contador;
   listado.appendChild(h6);
   h6.classList.add("fs-6", "p-3");
