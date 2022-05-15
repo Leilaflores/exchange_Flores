@@ -18,7 +18,7 @@ function enviar() {
     swal("No existe el usuario");
   } else {
     localStorage.setItem("ingresoUsuario", JSON.stringify(resultado[0]));
-    window.location.href = "/index.html";
+    window.location.href = "../index.html";
   }
 }
 
