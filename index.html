@@ -17,19 +17,25 @@
   <div>
     <nav class="bg-nav navbar navbar-expand-lg bg-light">
       <div class="navContenedor container-fluid">
-        <a class= "navbar-brand d-flex align-items-center gap-4 text-light" href="index.html"><img src="./multimedia/exchange.png" alt="Logo"><h3>Exchange</h3></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand d-flex align-items-center gap-4 text-light" href="index.html"><img
+            src="./multimedia/exchange.png" alt="Logo">
+          <h3>Exchange</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
           <i id="icono" class="fas fa-user" style="color: white;"></i>
           <ul class="navbar-nav justify-content-end">
             <li class="nav-item">
-              <a id="iniciarSesion"class="nav-link active text-light" aria-current="page" href="./vistas/iniciarsesion.html">Iniciar
+              <a id="iniciarSesion" class="nav-link active text-light" aria-current="page"
+                href="./vistas/iniciarsesion.html">Iniciar
                 sesión</a>
             </li>
             <li class="nav-item">
-              <a id="cerrarSesion" class="nav-link active text-light" aria-current="page" href="./index.html">Cerrar sesión</a>
+              <a id="cerrarSesion" class="nav-link active text-light" aria-current="page" href="./index.html">Cerrar
+                sesión</a>
             </li>
             <li class="nav-item">
               <a id="crearCuenta" class="nav-link text-light" href="./vistas/crearcuenta.html">Crear cuenta</a>
@@ -42,62 +48,66 @@
       </div>
     </nav>
   </div>
-  <div>
-    <div class="publicidad">
-      <img src="./multimedia/publicidad-01.png" alt="publicidad-01">
-    </div>
-  <div id="formulario" class="container mt-3">
-    <div class="justify-content-center row">
-    <form id="form" action="" name="formulario" method="get" class="contenedorForm " style="max-width: 425px;">
-
-      <div class="input-group mb-3">
-        <label class="input-group-text bg-destino text-light" for="inputGroupSelect01">Destino</label>
-        <select class="form-select" id="inputGroupSelect01">
-          <option selected>Selecione...</option>
-          <option value="chile">Chile</option>
-          <option value="peru">Perú</option>
-          <option value="venezuela">Venezuela</option>
-        </select>
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text bg-ars text-light">ARS $</span>
-        <input id="ars" type="number" class="form-control" min="0" value="0" step=".01 script="onKeypress="if(event.keyCode == 13) event.returnValue = false;";
-          aria-label="Dollar amount (with dot and two decimal places)">
-      </div>
+  <div class="container-lg ps-0 me-0 ms-0">
+    <div class=" justify-content-between flex-sm-column">
       <div>
-        <div class=" bg-sec alert alert-dark d-flex justify-content-between p-0" role="alert">
-          <div>
-            <h1 class="fs-6 m-3 fw-normal">Tasa</h1>
-          </div>
-          <div>
-            <h1 id="tasa" class="fs-6 m-3 fw-normal ">0</h1>
-          </div>
+        <img class="publicidad float-start " src="./multimedia/publicidad-01.png" alt="publicidad-01">
+      </div>
+      <div id="formulario" class="">
+        <div class="justify-content-center row mb-sm-5">
+          <form id="form" action="" name="formulario" method="get" class="contenedorForm m-3 ps-3"
+            style="max-width: 425px;">
+
+            <div class="input-group mb-3">
+              <label class="input-group-text bg-destino text-light" for="inputGroupSelect01">Destino</label>
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Selecione...</option>
+                <option value="chile">Chile</option>
+                <option value="peru">Perú</option>
+                <option value="venezuela">Venezuela</option>
+              </select>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text bg-ars text-light">ARS $</span>
+              <input id="ars" type="number" class="form-control" min="0" value="0" step=".01 script="
+                onKeypress="if(event.keyCode == 13) event.returnValue = false;" ;
+                aria-label="Dollar amount (with dot and two decimal places)">
+            </div>
+            <div>
+              <div class=" bg-sec alert alert-dark d-flex justify-content-between p-0" role="alert">
+                <div>
+                  <h1 class="fs-6 m-3 fw-normal">Tasa</h1>
+                </div>
+                <div>
+                  <h1 id="tasa" class="fs-6 m-3 fw-normal ">0</h1>
+                </div>
+              </div>
+            </div>
+            <div class="bg-sec alert alert-dark fs-6 fw-normal d-flex justify-content-between p-0" role="alert">
+              <div>
+                <h1 class="fs-6 m-3 fw-normal ">
+                  El beneficiario recibe...
+                </h1>
+              </div>
+              <div>
+                <h1 id="totales" class="fs-6 m-3 fw-normal ">
+                  0
+                </h1>
+              </div>
+            </div>
+            <div class="d-grid gap-2 d-md-block">
+              <button id="confirmar" class="btn btn-primary" type="button" value="Submit">Confirmar</button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="bg-sec alert alert-dark fs-6 fw-normal d-flex justify-content-between p-0" role="alert">
-        <div>
-          <h1 class="fs-6 m-3 fw-normal ">
-            El beneficiario recibe...
-          </h1>
-        </div>
-        <div>
-          <h1 id="totales" class="fs-6 m-3 fw-normal ">
-            0
-          </h1>
-        </div>
-      </div>
-      <div class="d-grid gap-2 d-md-block">
-        <button id="confirmar" class="btn btn-primary" type="button" value="Submit">Confirmar</button>
-      </div>
-    </form>
-  </div>
-  </div>
-</div>
+    </div>
 
   </div>
+  </div>
 
-  <footer id="footer" class="position-fixed bottom-0 w-100 text-light">
+  <footer id="footer" class=" bottom-0 w-100 text-light">
     <div class="bg-footer d-flex flex-column justify-content-between align-items-center p-2 flex-sm-row">
       <div class="iconos">
         <a href="https://twitter.com/" target="_BLANK">
@@ -129,4 +139,5 @@
   </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
+
 </html

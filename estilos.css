@@ -1,38 +1,57 @@
-.fondo{
+.fondo {
     background-color: #fff;
 }
 
-.bg-nav{
+.bg-nav {
     background-color: #01415B !important;
 }
+
 .bg-destino {
     background-color: #A6BC09;
 }
-.bg-ars{
+
+.bg-ars {
     background-color: #A6BC09;
-} 
-#confirmar{
+}
+
+#confirmar {
     background-color: #019587;
 }
 
-.confirmar{
+.confirmar {
     background-color: #019587;
 }
 
-.bg-footer{
-    background-color:#01415B ;
+.bg-footer {
+    background-color: #01415B;
 }
 
-a{
+a {
     text-decoration: none;
 }
-.contador{
+
+.contador {
     background-color: #01415B;
     color: white;
     border-radius: 5px;
 }
 
-.publicidad{
-width: 350;
-height: 248px;
+.publicidad {
+    width: 60vw;
+    height: 80vh;
+}
+
+#footer{
+    position: fixed;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 638px) {
+    .publicidad {
+        width: 100vw;
+        height: 50vh;
+    }
+    #footer{
+        position: relative;
+    } 
 }
