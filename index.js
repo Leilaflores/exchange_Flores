@@ -57,33 +57,48 @@ let monto = document.getElementById("ars");
 let beneficiario = document.getElementById("totales");
 
 monto.addEventListener("change", () => {
-  total = tasa.sumaTasa(tasaActual, monto.value);
-  beneficiario.innerText = total;
+  if (tasaActual != undefined) {
+    total = tasa.sumaTasa(tasaActual, monto.value);
+    beneficiario.innerText = Math.round(total);
+  }
 });
 
 let confirmar = document.getElementById("confirmar");
 
 confirmar.addEventListener("click", () => {
-  swal({
-    title: "Excelente!",
-    text: "Su orden se creo con exito!",
-    icon: "success",
-    buttons: {
-      confirm: {
-        text: "Continuar",
-        value: true,
-        visible: true,
-        className: "confirmar",
-        closeModal: true,
+  if (total != undefined) {
+    swal({
+      title: "Excelente!",
+      text: "Su orden se creo con exito!",
+      icon: "success",
+      buttons: {
+        confirm: {
+          text: "Continuar",
+          value: true,
+          visible: true,
+          className: "confirmar",
+          closeModal: true,
+        },
       },
-    },
-  });
-  contador++;
-  console.log(contador);
-  const listado = document.getElementById("form");
-  const h6 = document.createElement("h6");
-  h6.className ="contador my-3";
-  h6.textContent = "su numero de orden es: " + contador;
-  listado.appendChild(h6);
-  h6.classList.add("fs-6", "p-3");
+    });
+    contador++;
+    console.log(contador);
+    const listado = document.getElementById("form");
+    const h6 = document.createElement("h6");
+    h6.className = "contador my-3";
+    h6.textContent =
+      "Orden: #" +
+      contador +
+      " " +
+      monto.value +
+      " pesos a " +
+      Math.round(total) +
+      " " +
+      selector.value;
+    listado.appendChild(h6);
+    h6.classList.add("fs-6", "p-3");
+  }
+  else{
+    swal("Complete los datos");
+  }
 });

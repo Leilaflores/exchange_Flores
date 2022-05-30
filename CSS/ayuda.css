@@ -16,3 +16,11 @@
     transition-duration: 0.3s;
     color: white;
 }
+
+.container{
+    margin-bottom: 20px;
+}
+
+.whatsapp h6{
+    font-family:Arial, Helvetica, sans-serif;
+}
